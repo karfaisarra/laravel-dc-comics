@@ -15,15 +15,13 @@
                         </div>
                         <div class="card-footer d-flex gap-2">
                             <a class="btn btn-secondary" href="{{route('comics.show', $comic->id)}}">Show</a>
-                            <a class="btn btn-primary" href="{{route('comics.edit', ['comic' => $comic->id])}}">Edit</a>
-
-                            <form action="{{ route('comics.destroy', ['id'=> $comic->id]) }}" method="post">
+                            <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                            <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
 
-                                <input type="submit" value="Delete">
+                                <input class="btn btn-danger" type="submit" value="Delete">
                             </form>
-
                         </div>
                     </div>
                 </div>
